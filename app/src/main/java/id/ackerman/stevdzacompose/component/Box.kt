@@ -1,5 +1,6 @@
 package id.ackerman.stevdzacompose.component
 
+import android.widget.ImageView
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -45,7 +46,6 @@ fun LearnBox() {
                 text = "Hello Kotlin Developer Expert",
                 fontSize = 20.sp
             )
-
         }
     }
 }

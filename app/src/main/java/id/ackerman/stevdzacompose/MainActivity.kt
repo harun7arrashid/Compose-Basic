@@ -25,6 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import id.ackerman.stevdzacompose.component.ExpandableCard
 import id.ackerman.stevdzacompose.component.LearnRow
 import id.ackerman.stevdzacompose.component.SuperScriptText
 import id.ackerman.stevdzacompose.ui.theme.StevdzaComposeTheme
@@ -35,9 +36,21 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             StevdzaComposeTheme {
-                Surface(color = MaterialTheme. colors.background) {
 
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(MaterialTheme.colors.primary)
+                        .padding(24.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
 
+                ) {
+
+                    ExpandableCard(
+                        title = "Modern Android Development",
+                        desc = "Lorem ipsu asdkjh asd asidh asidh asnd asidh asd lkasdj easdiha llasdlasdl fjasdladlasd nd aslda lasdlalsdl askd lemnlaksdhjiolashdioasdhioashdoasihdoaidhaioh laksnd lknweq lawskj a sdlkhjasd lkn lkansdlk alskdnalksdnalksdh lkahsd lakshj dalkhsd laksdh woqiey qwioey adl nasld khlaksdhjalsidku oiasduoasd oasidhaoi sdhoaishdoiqwheoqiwheoqiweh oiqwehoiqwehoiqwehioqwehoqwiheqwioeh ioqweh"
+                    )
 
                 }
             }
@@ -49,9 +62,20 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     StevdzaComposeTheme() {
-        Column(modifier = Modifier.fillMaxSize()) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(MaterialTheme.colors.primary)
+                .padding(24.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
 
+        ) {
 
+            ExpandableCard(
+                title = "Modern Android Development",
+                desc = "Lorem ipsu asdkjh asd asidh asidh asnd asidh asd lkasdj easdiha llasdlasdl fjasdladlasd nd aslda lasdlalsdl askd lemnlaksdhjiolashdioasdhioashdoasihdoaidhaioh laksnd lknweq lawskj a sdlkhjasd lkn lkansdlk alskdnalksdnalksdh lkahsd lakshj dalkhsd laksdh woqiey qwioey adl nasld khlaksdhjalsidku oiasduoasd oasidhaoi sdhoaishdoiqwheoqiwheoqiweh oiqwehoiqwehoiqwehioqwehoqwiheqwioeh ioqweh"
+            )
 
         }
     }
