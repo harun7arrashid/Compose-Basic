@@ -16,10 +16,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.BaselineShift
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import id.ackerman.stevdzacompose.component.LearnRow
+import id.ackerman.stevdzacompose.component.SuperScriptText
 import id.ackerman.stevdzacompose.ui.theme.StevdzaComposeTheme
 import id.ackerman.stevdzacompose.ui.theme.Typography
 
@@ -28,7 +35,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             StevdzaComposeTheme {
-                Surface(color = MaterialTheme.colors.background) {
+                Surface(color = MaterialTheme. colors.background) {
+
 
 
                 }
@@ -41,11 +49,11 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     StevdzaComposeTheme() {
-
         Column(modifier = Modifier.fillMaxSize()) {
 
-        }
 
+
+        }
     }
 }
 
