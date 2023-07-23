@@ -22,10 +22,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.BaselineShift
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
@@ -53,56 +55,23 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting() {
+fun CustomText() {
 
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
+    Text(
+        text = "Hello Kotlin Developer Expert",
+        modifier = Modifier
+            .background(MaterialTheme.colors.primary)
+            .padding(16.dp)
+            .fillMaxWidth()
+        ,
+        color = Color.White,
+        fontSize = MaterialTheme.typography.h6.fontSize,
+        fontStyle = FontStyle.Italic,
+        fontWeight = FontWeight.Bold,
+        textAlign = TextAlign.Center
 
-        var text by remember { mutableStateOf("") }
+    )
 
-        OutlinedTextField(
-            value = text,
-            onValueChange = {
-                text = it
-            },
-            label = { Text(text = "This is Title") },
-            singleLine = true,
-            placeholder = { Text(text = "This is Hint") },
-            leadingIcon = {
-
-                IconButton(onClick = {  }) {
-                    Icon(
-                        imageVector = Icons.Filled.Email,
-                        contentDescription = "Email Icon"
-                    )
-                }
-            },
-
-            trailingIcon = {
-
-                IconButton(onClick = {  }) {
-                    Icon(
-                        imageVector = Icons.Filled.Check,
-                        contentDescription = "Cheklis Icon"
-                    )
-                }
-            },
-
-            keyboardOptions  = KeyboardOptions(
-                keyboardType = KeyboardType.Number,
-                imeAction    = ImeAction.Search
-            ),
-
-            keyboardActions = KeyboardActions(
-                onSearch = {
-                    Log.d("Harun", "Clicked onSearch")
-                }
-            )
-        )
-    }
 }
 
 @Preview(showBackground = true)
@@ -110,7 +79,11 @@ fun Greeting() {
 fun DefaultPreview() {
     StevdzaComposeTheme {
 
-        Greeting()
+        Column(modifier = Modifier.fillMaxSize()) {
+            
+            CustomText()
+            
+        }
 
     }
 }
